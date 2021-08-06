@@ -2,11 +2,21 @@
   --bg-colour: linear-gradient(
     hsl(0, 100%, 100%), 
     hsl(320, 100%, 50%),
-    hsl(270, 100%, 50%)
+    rgb(127, 0, 255)
   );
+  --speed: 2s;
+  --rotation: 360deg;
+  --origin-x: 50%;
+  --origin-y: 50%;
+  --width: 100px;
+  --height: 100px;
 }
 
-.wrapper {
+body {
+  margin: 0;
+}
+
+.main-container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -14,15 +24,32 @@
   height: 100vh;
 }
 
+.controls-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: calc(50vw - 20px);
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls-wrapper > input {
+  margin-bottom: 10px;
+}
+
+.box-wrapper {
+  position: relative;
+}
+
 .box {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: var(--width);
+  height: var(--height);
   opacity: 0.75;
   border-radius: 0% 50% / 0% 50%;
   mix-blend-mode: screen;
-  transform-origin: 50% 50%;
-  animation: mymove 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+  transform-origin: var(--origin-x) var(--origin-y);
+  animation: mymove var(--speed) cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
 }
 
 .box:nth-child(1) { 
@@ -33,25 +60,25 @@
 
 .box:nth-child(2) { 
   transform: translate(50%, -50%) rotate(270deg);
-  animation-delay: 0.1s;
+  animation-delay: 0s;
   background: var(--bg-colour);
 }
 
 .box:nth-child(3) { 
   transform: translate(-50%, 50%) rotate(90deg);
-  animation-delay: 0.2s;
+  animation-delay: 0s;
   background: var(--bg-colour);
 }
 
 .box:nth-child(4) { 
   transform: translate(50%, 50%) rotate(360deg);
-  animation-delay: 0.3s;
+  animation-delay: 0s;
   background: var(--bg-colour);
 }
 
 @keyframes mymove {
   50% {
     border-radius: 50%;
-    transform: translate(0%, 0%) rotate(0deg);
+    transform: translate(0%, 0%) rotate(var(--rotation));
   }
 }
