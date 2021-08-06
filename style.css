@@ -1,0 +1,57 @@
+:root {
+  --bg-colour: linear-gradient(
+    hsl(0, 100%, 100%), 
+    hsl(320, 100%, 50%),
+    hsl(270, 100%, 50%)
+  );
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.75;
+  border-radius: 0% 50% / 0% 50%;
+  mix-blend-mode: screen;
+  transform-origin: 50% 50%;
+  animation: mymove 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.box:nth-child(1) { 
+  transform: translate(-50%, -50%) rotate(180deg);
+  animation-delay: 0s;
+  background: var(--bg-colour);
+}
+
+.box:nth-child(2) { 
+  transform: translate(50%, -50%) rotate(270deg);
+  animation-delay: 0.1s;
+  background: var(--bg-colour);
+}
+
+.box:nth-child(3) { 
+  transform: translate(-50%, 50%) rotate(90deg);
+  animation-delay: 0.2s;
+  background: var(--bg-colour);
+}
+
+.box:nth-child(4) { 
+  transform: translate(50%, 50%) rotate(360deg);
+  animation-delay: 0.3s;
+  background: var(--bg-colour);
+}
+
+@keyframes mymove {
+  50% {
+    border-radius: 50%;
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+}
