@@ -19,6 +19,7 @@ body {
 .main-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -26,9 +27,9 @@ body {
 
 .controls-wrapper {
   position: absolute;
-  bottom: 0;
+  top: 20px;
   left: calc(50vw - 20px);
-  height: 20vh;
+  /* height: 20vh; */
   display: flex;
   flex-direction: column;
 }
@@ -38,7 +39,9 @@ body {
 }
 
 .box-wrapper {
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  /* height: 80vh; */
 }
 
 .box {
