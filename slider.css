@@ -85,8 +85,8 @@
 
 .controls-wrapper > label {
   margin: 0 0 10px 0;
-  /* position: relative;
-  left: 0;  
-  bottom: 42px;
-  font-size: 0.75rem; */
+}
+
+.controls-wrapper > button#reset {
+  display: none;
 }

@@ -3,17 +3,25 @@ const $ = (el) => document.querySelector(el);
 const setCssVar = (prop, value) => doc.style.setProperty(prop, value);
 const getCSSVar = (prop) => getComputedStyle(doc).getPropertyValue(prop).trim();
 
-// ['--speed', '--rotation', '--origin-x', '--origin-x'].forEach(prop => {
+const initialSettings = {}
+const props = ['--speed', '--rotation', '--origin-x', '--origin-x'];
 
-// });
+props.forEach(prop => initialSettings[prop] = getCSSVar(prop));
 
 $('#play').addEventListener('click', (e) => {
-  // const running = e.target.getAttribute('data-play-state') === 'running';
   const running = getCSSVar('--play-state') === 'running';
   const toggledState = running ? 'paused' : 'running';
   const buttonLabel = running ? 'Play' : 'Pause';
   setCssVar('--play-state', toggledState);
   e.target.textContent = buttonLabel;
+});
+
+$('#reset').addEventListener('click', (e) => {
+  props.forEach(prop => {
+    setCssVar(prop, initialSettings[prop]);
+    const p = initialSettings[prop];
+    console.log(p);
+  });
 });
 
 $('#speed').addEventListener('input', (e) => {
