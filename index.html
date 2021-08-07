@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width">
     <title>css-animating-rotating-blocks</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="slider.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <main class="main-container">
 
-      <section class="box-wrapper">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+      <h3>CSS flower animation</h3>
+
+      <section class="shapes-wrapper">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
       </section>
 
       <section class="controls-wrapper">
-        <input id="speed" value="2" type="range" min="0.5" max="4.5" step="0.1" />
-        <input id="rotation" value="360" type="range" min="0" max="1800" step="1" />
-        <input id="origin-x" value="1" type="range" min="0" max="100" step="1" />
-        <input id="origin-y" value="1" type="range" min="0" max="100" step="1" />
+        <label for="speed">Speed</label>
+        <input id="speed" class="slider" value="5" type="range" min="0.5" max="9.5" step="0.1" />
+        <label for="rotation">Rotation</label>
+        <input id="rotation" class="slider" value="900" type="range" min="0" max="1800" step="1" />
+        <label for="origin-x">Origin X</label>
+        <input id="origin-x" class="slider" value="50" type="range" min="0" max="100" step="1" />
+        <label for="origin-y">Origin Y</label>
+        <input id="origin-y" class="slider" value="50" type="range" min="0" max="100" step="1" />
+        <button id="play">Pause</button>
       </section>
-      
+
     </main>
     <script src="script.js"></script>
   </body>

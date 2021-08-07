@@ -1,19 +1,33 @@
 const doc = document.documentElement;
 const $ = (el) => document.querySelector(el);
-const setVar = (varName, value) => doc.style.setProperty(varName, value);
+const setCssVar = (prop, value) => doc.style.setProperty(prop, value);
+const getCSSVar = (prop) => getComputedStyle(doc).getPropertyValue(prop).trim();
+
+// ['--speed', '--rotation', '--origin-x', '--origin-x'].forEach(prop => {
+
+// });
+
+$('#play').addEventListener('click', (e) => {
+  // const running = e.target.getAttribute('data-play-state') === 'running';
+  const running = getCSSVar('--play-state') === 'running';
+  const toggledState = running ? 'paused' : 'running';
+  const buttonLabel = running ? 'Play' : 'Pause';
+  setCssVar('--play-state', toggledState);
+  e.target.textContent = buttonLabel;
+});
 
 $('#speed').addEventListener('input', (e) => {
-  setVar('--speed', e.target.value + 's');
+  setCssVar('--speed', e.target.value + 's');
 });
 
 $('#rotation').addEventListener('input', (e) => {
-  setVar('--rotation', e.target.value + 'deg');
+  setCssVar('--rotation', e.target.value + 'deg');
 });
 
 $('#origin-x').addEventListener('input', (e) => {
-  setVar('--origin-x', e.target.value + '%');
+  setCssVar('--origin-x', e.target.value + '%');
 });
 
 $('#origin-y').addEventListener('input', (e) => {
-  setVar('--origin-y', e.target.value + '%');
+  setCssVar('--origin-y', e.target.value + '%');
 });
