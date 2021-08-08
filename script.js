@@ -21,7 +21,6 @@ $('#reset').addEventListener('click', (e) => {
     const val = initialSettings[prop];
     setCssVar('--' + prop, val);
     $(`#${prop}`).value = extractNum(val);
-    console.log(prop, $(`#${prop}`))
   });
 });
 
