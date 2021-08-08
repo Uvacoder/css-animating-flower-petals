@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>css-animating-rotating-blocks</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="slider.css" rel="stylesheet" type="text/css" />
+    <link href="controls.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <main class="main-container">
@@ -28,8 +28,10 @@
         <input id="origin-x" class="slider" value="50" type="range" min="0" max="100" step="1" />
         <label for="origin-y">Origin Y</label>
         <input id="origin-y" class="slider" value="50" type="range" min="0" max="100" step="1" />
-        <button id="play">Pause</button>
-        <button id="reset">Reset</button>
+        <div class="button-wrapper">
+          <button id="play">Pause</button>
+          <button id="reset">Reset</button>
+        </div>
       </section>
 
     </main>

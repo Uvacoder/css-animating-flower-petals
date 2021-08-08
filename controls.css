@@ -61,12 +61,22 @@
   flex-direction: column;
 }
 
-.controls-wrapper > label,
-.controls-wrapper > button {
-  font-size: 12px;
+.controls-wrapper > div {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
-.controls-wrapper > button {
+.controls-wrapper > div > label,
+.controls-wrapper > div > button {
+  font-size: 14px;
+}
+
+.controls-wrapper > div > button:first-child {
+  margin-right: 5px;
+}
+
+.controls-wrapper > div > button {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -77,16 +87,13 @@
   color: #fff;
   border: 0;
   transition: all 0.25s ease;
+  width: 50%;
 }
 
-.controls-wrapper > button:hover {
+.controls-wrapper > div > button:hover {
   background: var(--dark);
 }
 
 .controls-wrapper > label {
   margin: 0 0 10px 0;
-}
-
-.controls-wrapper > button#reset {
-  display: none;
 }

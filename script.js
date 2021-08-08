@@ -4,9 +4,9 @@ const setCssVar = (prop, value) => doc.style.setProperty(prop, value);
 const getCSSVar = (prop) => getComputedStyle(doc).getPropertyValue(prop).trim();
 
 const initialSettings = {}
-const props = ['--speed', '--rotation', '--origin-x', '--origin-x'];
+const props = ['speed', 'rotation', 'origin-x', 'origin-y'];
 
-props.forEach(prop => initialSettings[prop] = getCSSVar(prop));
+props.forEach(prop => initialSettings[prop] = getCSSVar('--' + prop));
 
 $('#play').addEventListener('click', (e) => {
   const running = getCSSVar('--play-state') === 'running';
@@ -18,11 +18,16 @@ $('#play').addEventListener('click', (e) => {
 
 $('#reset').addEventListener('click', (e) => {
   props.forEach(prop => {
-    setCssVar(prop, initialSettings[prop]);
-    const p = initialSettings[prop];
-    console.log(p);
+    const val = initialSettings[prop];
+    setCssVar('--' + prop, val);
+    $(`#${prop}`).value = extractNum(val);
+    console.log(prop, $(`#${prop}`))
   });
 });
+
+const extractNum = (str) => {
+  return (str.match(/\d+/g) || []).map(n => parseInt(n)).shift();
+}
 
 $('#speed').addEventListener('input', (e) => {
   setCssVar('--speed', e.target.value + 's');
