@@ -1,5 +1,4 @@
 :root {
-  --light: hsl(260, 18%, 90%);
   --light-mid: hsl(260, 18%, 80%);
   --mid: hsl(260, 18%, 70%);
   --dark: hsl(260, 10%, 40%);
@@ -9,6 +8,10 @@
   --slider-offset: calc(50px / 2); /* label width/2 */
   --spinner-control-size: 20px;
 }
+
+/**********/
+/* Slider */
+/**********/
 
 .slider {
   position: relative;
@@ -73,7 +76,7 @@
 }
 
 .controls-wrapper > div > button:first-child {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .controls-wrapper > div > button {
