@@ -1,6 +1,6 @@
-### Animating flower
+### Animating flower petals
 
-> Using vanilla JS and CSS
+> Controlling the animation with CSS and vanilla JS
 
 - https://css-tricks.com/updating-a-css-variable-with-javascript/
 - Use regex to extract numbers from mixed string: https://stackoverflow.com/questions/42532450/extract-number-from-string-javascript
