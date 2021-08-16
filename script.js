@@ -8,7 +8,10 @@ const props = ['speed', 'rotation', 'origin-x', 'origin-y'];
 
 props.forEach(prop => {
   const input = $(`#${prop}`);
-  initialSettings[prop] = { value:input.value, unit:input.dataset.unit }
+  initialSettings[prop] = { 
+    value: input.value, 
+    unit: input.dataset.unit 
+  }
   $(`#${prop}`).addEventListener('input', (e) => {
     setCssVar(`--${prop}`, e.target.value + input.dataset.unit);
   });
