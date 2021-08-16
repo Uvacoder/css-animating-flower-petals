@@ -1,8 +1,8 @@
 :root {
   --bg-colour: linear-gradient(180deg,
-    hsl(0, 100%, 100%), 
+    #f6ff7b, 
     hsl(320, 100%, 65%),
-    hsl(270, 100%, 55%)
+    hsl(270, 100%, 50%)
   );
   --speed: 5s;
   --max-speed: 10s;
