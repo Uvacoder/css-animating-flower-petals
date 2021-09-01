@@ -1,12 +1,7 @@
-### Animating flower petals
+### Animating flower petals 🌷
 
-> Controlling the animation with CSS and vanilla JS
+> Controlling the animation with CSS and just 33 lines of vanilla JavaScript
 
-- https://css-tricks.com/updating-a-css-variable-with-javascript/
-- Use regex to extract numbers from mixed string: https://stackoverflow.com/questions/42532450/extract-number-from-string-javascript
-
-```js
-const extractNum = (str) => {
-  return (str.match(/\d+/g) || []).map(n => parseInt(n)).shift();
-}
-```
+- [Live demo](https://css-animating-rotating-shapes.rolandjlevy.repl.co/)
+- [Source code](https://replit.com/@RolandJLevy/css-animating-rotating-shapes)
+- [See Github repo](https://github.com/rolandjlevy/css-animating-rotating-shapes)
